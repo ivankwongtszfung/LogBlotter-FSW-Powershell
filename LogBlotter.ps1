@@ -44,17 +44,6 @@
                 if(!$syncHash.filePathHash.ContainsKey($pathname)){
                     $syncHash.meta.Filepaths.Add($pathname)
                     $syncHash.filePathHash.Add($pathname,3)
-                    if($syncHash.meta.Filepaths.Count -gt 1){
-                         $syncHash.meta.Filepaths.Sort([System.Management.Automation.ScriptBlock]{
-                            param ($x,$y)
-                            $x = split-path -Path $x -Parent | split-path -Parent | split-path -Leaf
-                            $y = split-path -Path $y -Parent | split-path -Parent | split-path -Leaf
-                            $xNum = [System.Int16]$x.SubString(7,$x.length - 7)
-                            $yNum = [System.Int16]$y.SubString(7,$y.length - 7)
-                            return ($xNum - $yNum)
-                        })
-
-                    }
                     Write-Host "new File: $pathname" -ForegroundColor Yellow
                 }
 
@@ -104,6 +93,7 @@
                 $syncHash.DataContext = $Object
             }
             catch{
+                $syncHash.FSWError = $Error
                 Write-Host $Error 
             }
 
@@ -241,6 +231,9 @@ $Error.Clear()
 #Display Error
 Write-Host "Runspace:" -fore Green
 Write-host $syncHash.Error -fore Red -BackgroundColor Black
-Write-Host "Form Runspace:" -fore Green
+Write-Host "Form:" -fore Green
 Write-Host $syncHash.formError -fore Red -BackgroundColor Black
+Write-Host "Event:" -fore Green
+Write-Host $syncHash.FSWError -fore Red -BackgroundColor Black
+
 #endregion
