@@ -4,13 +4,13 @@ File System Watcher integrated with WPF GUI running in Powershell.
 ## Reference
 I am a new-joiner to the Powershell Family. I read a lot of googles, stack Overflows, ss64 to complete the whole program.
 The URL below is the one I found most useful and I reference some part of my code from them:
-#### The Documentation of Powershell: 
-https://ss64.com/ps/
-#### Everything related to runspace:
-[About the Runspace](https://learn-powershell.net/2012/10/14/powershell-and-wpf-writing-data-to-a-ui-from-a-different-runspace/)
-[About the Runspace & Oberservable](https://learn-powershell.net/2012/12/08/powershell-and-wpf-listbox-part-2datatriggers-and-observablecollection/)
-#### Everything related to File System Watcher(the best ever): 
-[Source Code](https://referencesource.microsoft.com/#system/services/io/system/io/FileSystemWatcher.cs)
+* About Powershell: 
+Documentation: <https://ss64.com/ps/>
+* Everything related to runspace:
+About the Runspace: <https://learn-powershell.net/2012/10/14/powershell-and-wpf-writing-data-to-a-ui-from-a-different-runspace/>
+About the Runspace & Oberservable: <https://learn-powershell.net/2012/12/08/powershell-and-wpf-listbox-part-2datatriggers-and-observablecollection/>
+* Everything related to File System Watcher:
+<https://referencesource.microsoft.com/#system/services/io/system/io/FileSystemWatcher.cs>
 
 They are all great guys, credits on them.
 
